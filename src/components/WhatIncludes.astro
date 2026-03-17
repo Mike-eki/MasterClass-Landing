@@ -1,0 +1,178 @@
+---
+const inclusions = [
+    {
+        title: "Duración",
+        desc: "mayo a octubre.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inclusion-icon"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>`,
+    },
+    {
+        title: "Frecuencia",
+        desc: "1 encuentro mensual.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inclusion-icon"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>`,
+    },
+    {
+        title: "Duración de cada encuentro",
+        desc: "1:30 h.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inclusion-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+    },
+    {
+        title: "Modalidad",
+        desc: "online por Zoom.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inclusion-icon"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>`,
+    },
+    {
+        title: "Acceso",
+        desc: "grabaciones disponibles.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inclusion-icon"><path d="m10 7 5 3-5 3Z"/><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M12 17v4"/><path d="M8 21h8"/></svg>`,
+    },
+    {
+        title: "Material de trabajo",
+        desc: "guía/bitácora + consignas.",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inclusion-icon"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
+    },
+    {
+        title: "Espacio de integración",
+        desc: 'preguntas disparadoras y tareas para "bajar a vida".',
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inclusion-icon"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>`,
+    },
+];
+---
+
+<section id="que-incluye" class="what-includes-section">
+    <div class="container">
+        <div class="what-includes-header">
+            <h2 class="what-includes-title">Qué incluye</h2>
+            <div class="info-divider"></div>
+        </div>
+
+        <div class="what-includes-grid">
+            {
+                inclusions.map((item) => (
+                    <div class="incl-card">
+                        <div class="incl-icon-wrapper">
+                            <Fragment set:html={item.icon} />
+                        </div>
+                        <div class="incl-content">
+                            <h3 class="incl-card-title">{item.title}</h3>
+                            <p class="incl-card-desc">{item.desc}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="what-includes-cta text-center mt-12">
+            <a href="#registro" class="btn-primary">Quiero sumarme</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .what-includes-section {
+        background-color: #f9f5ed;
+        padding: 80px 16px;
+    }
+
+    .what-includes-header {
+        text-align: center;
+        margin-bottom: 56px;
+    }
+
+    .what-includes-title {
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 1.2;
+        color: #282828;
+        margin-bottom: 16px;
+    }
+
+    .info-divider {
+        width: 96px;
+        height: 6px;
+        background-color: #9e8b7f;
+        border-radius: 3px;
+        margin: 0 auto;
+    }
+
+    .what-includes-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        .what-includes-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+    }
+
+    .incl-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        background-color: #ffffff;
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+
+    .incl-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+        border-color: rgba(158, 139, 127, 0.3);
+    }
+
+    .incl-icon-wrapper {
+        background-color: rgba(158, 139, 127, 0.1);
+        color: #9e8b7f;
+        padding: 12px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .incl-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding-top: 4px;
+    }
+
+    .incl-card-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #282828;
+        line-height: 1.2;
+    }
+
+    .incl-card-desc {
+        font-size: 15px;
+        font-weight: 400;
+        color: #334155;
+        line-height: 1.5;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mt-12 {
+        margin-top: 48px;
+    }
+
+    /* Target the SVG class directly from the component mapping */
+    :global(.inclusion-icon) {
+        width: 24px;
+        height: 24px;
+        color: #9e8b7f;
+    }
+</style>

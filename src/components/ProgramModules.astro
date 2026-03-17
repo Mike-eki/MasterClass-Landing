@@ -1,69 +1,69 @@
 ---
 const modules = [
-  {
-    title: 'Módulo 1: META: PLENITUD',
-    content: [
-      'Planes quiméricos vs. ambición realizadora.',
-      'Felicidad vs. placer.',
-      'La otra cara: dolor, frustración, fracaso, sufrimiento.',
-      '¿Puedo lograrlo con mis fuerzas?',
-      '<strong>Base del método:</strong> mente clara, enfoque, transformación, acción sostenida.'
-    ]
-  },
-  {
-    title: 'Módulo 2: ¿Quién soy y quién quiero ser?',
-    content: [
-      '<strong>Autoconocimiento:</strong> cuerpo, mente, afectividad, espíritu.',
-      'Mi mente como límite (o como aliada): claridad y enfoque.',
-      '¿Por qué siento lo que siento? salud y madurez.'
-    ]
-  },
-  {
-    title: 'Módulo 3: Emocionalmente competentes',
-    content: [
-      'Afectos, emociones, sentimientos, pasiones.',
-      'Competencias intra e interpersonales.',
-      'Regularse: reaccionar vs. responder.',
-      'Vivir según valores y sentido (no "lo que me sale").'
-    ]
-  },
-  {
-    title: 'Módulo 4: Autoestima y autovaloración',
-    content: [
-      'Amar lo que soy. Aceptar lo que soy. Mejorar lo que soy.',
-      'Autoestima y motivación.',
-      'Autoestima y vínculos (socialización).',
-      'Autoestima y plenitud.'
-    ]
-  },
-  {
-    title: 'Módulo 5: ¿Qué hacemos con nuestra historia?',
-    content: [
-      'Familia de origen.',
-      'Determinados, condicionados o libres.',
-      'Tomar el timón de la propia vida.'
-    ]
-  },
-  {
-    title: 'Módulo 6: Tiempo, prioridades y control',
-    content: [
-      'Vivir en el pasado vs. vivir en el futuro.',
-      'Administración del tiempo.',
-      'Prioridades.',
-      'Querer controlarlo todo.',
-      'Proyectar y fluir.'
-    ]
-  },
-  {
-    title: 'Módulo 7: Cambiar, transformarse',
-    content: [
-      'Neuroplasticidad.',
-      'Máximo potencial.',
-      'Apogeo y plenitud.',
-      'Disciplina.',
-      'Acción sostenida.'
-    ]
-  }
+    {
+        title: "Módulo 1: META: PLENITUD",
+        content: [
+            "Planes quiméricos vs. ambición realizadora.",
+            "Felicidad vs. placer.",
+            "La otra cara: dolor, frustración, fracaso, sufrimiento.",
+            "¿Puedo lograrlo con mis fuerzas?",
+            "<strong>Base del método:</strong> mente clara, enfoque, transformación, acción sostenida.",
+        ],
+    },
+    {
+        title: "Módulo 2: ¿Quién soy y quién quiero ser?",
+        content: [
+            "<strong>Autoconocimiento:</strong> cuerpo, mente, afectividad, espíritu.",
+            "Mi mente como límite (o como aliada): claridad y enfoque.",
+            "¿Por qué siento lo que siento? salud y madurez.",
+        ],
+    },
+    {
+        title: "Módulo 3: Emocionalmente competentes",
+        content: [
+            "Afectos, emociones, sentimientos, pasiones.",
+            "Competencias intra e interpersonales.",
+            "Regularse: reaccionar vs. responder.",
+            'Vivir según valores y sentido (no "lo que me sale").',
+        ],
+    },
+    {
+        title: "Módulo 4: Autoestima y autovaloración",
+        content: [
+            "Amar lo que soy. Aceptar lo que soy. Mejorar lo que soy.",
+            "Autoestima y motivación.",
+            "Autoestima y vínculos (socialización).",
+            "Autoestima y plenitud.",
+        ],
+    },
+    {
+        title: "Módulo 5: ¿Qué hacemos con nuestra historia?",
+        content: [
+            "Familia de origen.",
+            "Determinados, condicionados o libres.",
+            "Tomar el timón de la propia vida.",
+        ],
+    },
+    {
+        title: "Módulo 6: Tiempo, prioridades y control",
+        content: [
+            "Vivir en el pasado vs. vivir en el futuro.",
+            "Administración del tiempo.",
+            "Prioridades.",
+            "Querer controlarlo todo.",
+            "Proyectar y fluir.",
+        ],
+    },
+    {
+        title: "Módulo 7: Cambiar, transformarse",
+        content: [
+            "Neuroplasticidad.",
+            "Máximo potencial.",
+            "Apogeo y plenitud.",
+            "Disciplina.",
+            "Acción sostenida.",
+        ],
+    },
 ];
 ---
 
@@ -71,31 +71,38 @@ const modules = [
     <div class="container">
         <div class="modules-header">
             <h2 class="modules-title">Módulos del programa</h2>
-            <p class="modules-subtitle">Mayo a Octubre</p>
+            <p class="modules-subtitle"></p>
             <div class="info-divider"></div>
         </div>
 
         <div class="accordion-container">
-            {modules.map((mod, index) => (
-                <div class="accordion-item" data-index={index}>
-                    <button class="accordion-header" aria-expanded="false">
-                        <span class="accordion-title">{mod.title}</span>
-                        <svg class="accordion-icon" viewBox="0 0 24 24" width="24" height="24">
-                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
-                        </svg>
-                    </button>
-                    <div class="accordion-content">
-                        <ul class="module-list">
-                            {mod.content.map(item => (
-                                <li class="module-item">
-                                    <div class="module-bullet"></div>
-                                    <span set:html={item} />
-                                </li>
-                            ))}
-                        </ul>
+            {
+                modules.map((mod, index) => (
+                    <div class="accordion-item" data-index={index}>
+                        <button class="accordion-header" aria-expanded="false">
+                            <span class="accordion-title">{mod.title}</span>
+                            <svg
+                                class="accordion-icon"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24"
+                            >
+                                <path d="M7 10l5 5 5-5z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="module-list">
+                                {mod.content.map((item) => (
+                                    <li class="module-item">
+                                        <div class="module-bullet" />
+                                        <span set:html={item} />
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))
+            }
         </div>
     </div>
 </section>
@@ -232,7 +239,7 @@ const modules = [
         .accordion-header {
             padding: 24px 32px;
         }
-        
+
         .module-list {
             padding: 0 32px 32px;
         }
@@ -241,32 +248,39 @@ const modules = [
 
 <script>
     function setupAccordion() {
-        const headers = document.querySelectorAll('.accordion-header');
-        
-        headers.forEach(header => {
-            header.addEventListener('click', () => {
+        const headers = document.querySelectorAll(".accordion-header");
+
+        headers.forEach((header) => {
+            header.addEventListener("click", () => {
                 const item = header.parentElement;
                 const content = header.nextElementSibling as HTMLElement;
-                const isExpanded = header.getAttribute('aria-expanded') === 'true';
+                const isExpanded =
+                    header.getAttribute("aria-expanded") === "true";
 
                 // Close all other accordions
-                document.querySelectorAll('.accordion-header').forEach(otherHeader => {
-                    if (otherHeader !== header) {
-                        otherHeader.setAttribute('aria-expanded', 'false');
-                        otherHeader.parentElement?.classList.remove('active');
-                        (otherHeader.nextElementSibling as HTMLElement).style.maxHeight = '0px';
-                    }
-                });
+                document
+                    .querySelectorAll(".accordion-header")
+                    .forEach((otherHeader) => {
+                        if (otherHeader !== header) {
+                            otherHeader.setAttribute("aria-expanded", "false");
+                            otherHeader.parentElement?.classList.remove(
+                                "active",
+                            );
+                            (
+                                otherHeader.nextElementSibling as HTMLElement
+                            ).style.maxHeight = "0px";
+                        }
+                    });
 
                 // Toggle current accordion
                 if (!isExpanded) {
-                    header.setAttribute('aria-expanded', 'true');
-                    item?.classList.add('active');
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                    header.setAttribute("aria-expanded", "true");
+                    item?.classList.add("active");
+                    content.style.maxHeight = content.scrollHeight + "px";
                 } else {
-                    header.setAttribute('aria-expanded', 'false');
-                    item?.classList.remove('active');
-                    content.style.maxHeight = '0px';
+                    header.setAttribute("aria-expanded", "false");
+                    item?.classList.remove("active");
+                    content.style.maxHeight = "0px";
                 }
             });
         });
@@ -274,5 +288,5 @@ const modules = [
 
     // Run on initial load and view transitions
     setupAccordion();
-    document.addEventListener('astro:page-load', setupAccordion);
+    document.addEventListener("astro:page-load", setupAccordion);
 </script>
