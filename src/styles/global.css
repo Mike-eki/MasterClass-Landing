@@ -12,6 +12,19 @@ body {
     background-color: #f9f5ed;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+p, li {
+    text-wrap: pretty;
+}
+
+/* Prevent orphans in text-bearing span elements */
+span:not([class*="dot"]):not([class*="icon"]):not([class*="badge-dot"]):not([class*="letter"]):not([class*="bullet"]):not([class*="avatar"]) {
+    text-wrap: pretty;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -130,11 +143,16 @@ img {
     gap: 62px;
 }
 
+@keyframes soft-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.75); }
+}
+
 .hero-badge {
     background-color: rgba(158, 139, 127, 0.1);
     border: 1px solid rgba(158, 139, 127, 0.2);
     border-radius: 12px;
-    padding: 4px;
+    padding: 4px 12px 4px 8px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -144,8 +162,10 @@ img {
 .hero-badge-dot {
     width: 8px;
     height: 8px;
+    flex-shrink: 0;
     background-color: #9e8b7f;
-    border-radius: 4px;
+    border-radius: 50%;
+    animation: soft-pulse 2s ease-in-out infinite;
 }
 
 .hero-badge-text {
@@ -845,13 +865,32 @@ img {
     transform: translateX(4px);
 }
 
-.social-icon {
+.social-icon-frame {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
     border: 1px solid #c5c5ba;
-    border-radius: 20px;
-    padding: 8px;
+    border-radius: 50%;
     background-color: #f9f5ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-link:hover .social-icon-frame {
+    background-color: #9e8b7f;
+    border-color: #9e8b7f;
+}
+
+.social-link:hover .social-icon {
+    filter: brightness(0) invert(1);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
 }
 
 .social-text {
@@ -1194,34 +1233,3 @@ button:active,
         height: 384px;
     }
 
-    .hero-image-main {
-        height: 336px;
-    }
-
-    .hero-image-overlay {
-        width: 224px;
-        height: 256px;
-    }
-
-    .hero-image-small {
-        height: 292px;
-    }
-
-    .logos-container {
-        padding: 0 186px;
-    }
-
-    .results-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 1280px) {
-    .hero-title {
-        font-size: 60px;
-    }
-
-    .hero-subtitle {
-        font-size: 48px;
-    }
-}
