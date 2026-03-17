@@ -1,0 +1,144 @@
+---
+
+---
+
+<section id="register" class="registration-section">
+    <div class="registration-container">
+        <div class="registration-content">
+            <div class="flex-col gap-8">
+                <h2 class="registration-title">
+                    Completá el formulario para asegurar tu lugar
+                </h2>
+                <p class="registration-subtitle">
+                    No pierdas la oportunidad de transformar tu carrera
+                    profesional.
+                </p>
+            </div>
+
+            <form class="registration-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Nombre</label>
+                        <input
+                            type="text"
+                            class="form-input"
+                            placeholder="Tu nombre"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Apellido</label>
+                        <input
+                            type="text"
+                            class="form-input"
+                            placeholder="Tu apellido"
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input
+                        type="email"
+                        class="form-input"
+                        placeholder="ejemplo@correo.com"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Teléfono / WhatsApp</label>
+                    <input
+                        type="tel"
+                        class="form-input"
+                        placeholder="+54 11 ..."
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"
+                        >Mensaje adicional (opcional)</label
+                    >
+                    <textarea
+                        class="form-textarea"
+                        placeholder="¿Tienes alguna consulta?"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary"
+                    >Regístrate - $5.000 ARS</button
+                >
+
+                <p class="form-disclaimer">
+                    La información proporcionada se utilizará exclusivamente
+                    para contactar a los participantes y enviar los materiales
+                    necesarios para acceder a la masterclass.
+                </p>
+            </form>
+        </div>
+
+        <aside class="registration-sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-header">
+                    <img
+                        src="/images/img_icon_gray_500.svg"
+                        alt="Seguinos"
+                        class="sidebar-icon"
+                    />
+                    <h3 class="sidebar-title">Seguinos</h3>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <img
+                            src="/images/instagram.svg"
+                            alt="Instagram"
+                            class="social-icon"
+                        />
+                        <span class="social-text">Instagram</span>
+                    </a>
+
+                    <a href="#" class="social-link">
+                        <img
+                            src="/images/img_vector.svg"
+                            alt="YouTube"
+                            class="social-icon"
+                        />
+                        <span class="social-text">YouTube</span>
+                    </a>
+
+                    <a href="#" class="social-link">
+                        <img
+                            src="/images/img_vector_gray_900_01.svg"
+                            alt="TikTok"
+                            class="social-icon"
+                        />
+                        <span class="social-text">TikTok</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <img
+                    src="/images/img_visual_decorativo.png"
+                    alt="Imagen decorativa"
+                    class="decorative-image"
+                />
+            </div>
+        </aside>
+    </div>
+</section>
+
+<script>
+    // Form submission handling
+    const form = document.querySelector(".registration-form");
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert(
+                "¡Gracias por tu registro! Te contactaremos pronto con los detalles del acceso.",
+            );
+        });
+    }
+</script>

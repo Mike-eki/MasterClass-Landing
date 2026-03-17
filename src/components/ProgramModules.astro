@@ -1,0 +1,278 @@
+---
+const modules = [
+  {
+    title: 'Módulo 1: META: PLENITUD',
+    content: [
+      'Planes quiméricos vs. ambición realizadora.',
+      'Felicidad vs. placer.',
+      'La otra cara: dolor, frustración, fracaso, sufrimiento.',
+      '¿Puedo lograrlo con mis fuerzas?',
+      '<strong>Base del método:</strong> mente clara, enfoque, transformación, acción sostenida.'
+    ]
+  },
+  {
+    title: 'Módulo 2: ¿Quién soy y quién quiero ser?',
+    content: [
+      '<strong>Autoconocimiento:</strong> cuerpo, mente, afectividad, espíritu.',
+      'Mi mente como límite (o como aliada): claridad y enfoque.',
+      '¿Por qué siento lo que siento? salud y madurez.'
+    ]
+  },
+  {
+    title: 'Módulo 3: Emocionalmente competentes',
+    content: [
+      'Afectos, emociones, sentimientos, pasiones.',
+      'Competencias intra e interpersonales.',
+      'Regularse: reaccionar vs. responder.',
+      'Vivir según valores y sentido (no "lo que me sale").'
+    ]
+  },
+  {
+    title: 'Módulo 4: Autoestima y autovaloración',
+    content: [
+      'Amar lo que soy. Aceptar lo que soy. Mejorar lo que soy.',
+      'Autoestima y motivación.',
+      'Autoestima y vínculos (socialización).',
+      'Autoestima y plenitud.'
+    ]
+  },
+  {
+    title: 'Módulo 5: ¿Qué hacemos con nuestra historia?',
+    content: [
+      'Familia de origen.',
+      'Determinados, condicionados o libres.',
+      'Tomar el timón de la propia vida.'
+    ]
+  },
+  {
+    title: 'Módulo 6: Tiempo, prioridades y control',
+    content: [
+      'Vivir en el pasado vs. vivir en el futuro.',
+      'Administración del tiempo.',
+      'Prioridades.',
+      'Querer controlarlo todo.',
+      'Proyectar y fluir.'
+    ]
+  },
+  {
+    title: 'Módulo 7: Cambiar, transformarse',
+    content: [
+      'Neuroplasticidad.',
+      'Máximo potencial.',
+      'Apogeo y plenitud.',
+      'Disciplina.',
+      'Acción sostenida.'
+    ]
+  }
+];
+---
+
+<section id="modules" class="modules-section">
+    <div class="container">
+        <div class="modules-header">
+            <h2 class="modules-title">Módulos del programa</h2>
+            <p class="modules-subtitle">Mayo a Octubre</p>
+            <div class="info-divider"></div>
+        </div>
+
+        <div class="accordion-container">
+            {modules.map((mod, index) => (
+                <div class="accordion-item" data-index={index}>
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">{mod.title}</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="module-list">
+                            {mod.content.map(item => (
+                                <li class="module-item">
+                                    <div class="module-bullet"></div>
+                                    <span set:html={item} />
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .modules-section {
+        background-color: #f9f5ed;
+        padding: 80px 16px;
+    }
+
+    .modules-header {
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    .modules-title {
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 1.2;
+        color: #282828;
+    }
+
+    .modules-subtitle {
+        font-size: 18px;
+        font-weight: 500;
+        color: #9e8b7f;
+        margin-top: 8px;
+        margin-bottom: 24px;
+        font-style: italic;
+    }
+
+    .info-divider {
+        width: 96px;
+        height: 6px;
+        background-color: #9e8b7f;
+        border-radius: 3px;
+        margin: 0 auto;
+    }
+
+    .accordion-container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .accordion-item {
+        background-color: #c5c5ba;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .accordion-item.active {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        background-color: #dacfc4;
+    }
+
+    .accordion-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        color: #282828;
+    }
+
+    .accordion-title {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .accordion-icon {
+        transition: transform 0.3s ease;
+        color: #6c705f;
+    }
+
+    .accordion-header[aria-expanded="true"] .accordion-icon {
+        transform: rotate(180deg);
+        color: #9e8b7f;
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+    }
+
+    .module-list {
+        list-style: none;
+        padding: 0 24px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .module-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 15px;
+        color: #334155;
+        line-height: 1.5;
+    }
+
+    .module-item strong {
+        color: #282828;
+    }
+
+    .module-bullet {
+        width: 6px;
+        height: 6px;
+        background-color: #9e8b7f;
+        border-radius: 50%;
+        margin-top: 8px;
+        flex-shrink: 0;
+    }
+
+    @media (min-width: 768px) {
+        .modules-title {
+            font-size: 40px;
+        }
+
+        .accordion-title {
+            font-size: 20px;
+        }
+
+        .accordion-header {
+            padding: 24px 32px;
+        }
+        
+        .module-list {
+            padding: 0 32px 32px;
+        }
+    }
+</style>
+
+<script>
+    function setupAccordion() {
+        const headers = document.querySelectorAll('.accordion-header');
+        
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const content = header.nextElementSibling as HTMLElement;
+                const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+                // Close all other accordions
+                document.querySelectorAll('.accordion-header').forEach(otherHeader => {
+                    if (otherHeader !== header) {
+                        otherHeader.setAttribute('aria-expanded', 'false');
+                        otherHeader.parentElement?.classList.remove('active');
+                        (otherHeader.nextElementSibling as HTMLElement).style.maxHeight = '0px';
+                    }
+                });
+
+                // Toggle current accordion
+                if (!isExpanded) {
+                    header.setAttribute('aria-expanded', 'true');
+                    item?.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    header.setAttribute('aria-expanded', 'false');
+                    item?.classList.remove('active');
+                    content.style.maxHeight = '0px';
+                }
+            });
+        });
+    }
+
+    // Run on initial load and view transitions
+    setupAccordion();
+    document.addEventListener('astro:page-load', setupAccordion);
+</script>
